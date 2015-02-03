@@ -57,6 +57,7 @@ namespace mvISC590AsgWebForms
 
         protected void btnCompute_Click(object sender, EventArgs e)
         {
+            //initialize the components.
             int prenodeID1 = 0, prenodeID2 = 0, prenodeID3 = 0;
             int exenodeID1 = 0, exenodeID2 = 0, exenodeID3 = 0;
             {
