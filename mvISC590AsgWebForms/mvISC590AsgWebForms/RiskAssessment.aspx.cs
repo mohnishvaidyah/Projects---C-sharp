@@ -13,8 +13,7 @@ namespace mvISC590AsgWebForms
         {
             if (!IsPostBack)
             {
-                //Populate Dropdown lists
-                PopulateNodeDDls();
+              PopulateNodeDDls();
             }
         }
 
@@ -52,12 +51,11 @@ namespace mvISC590AsgWebForms
             ddlExecute3.Items.Add(new ListItem("Select Execute node Level 3", "0"));
             ddlExecute3.Items.Add(new ListItem("Swap boot media", "63"));
             ddlExecute3.Items.Add(new ListItem("Destroy removable media", "73"));
-
         }
 
+
         protected void btnCompute_Click(object sender, EventArgs e)
-        {
-            //initialize the components.
+        {   
             int prenodeID1 = 0, prenodeID2 = 0, prenodeID3 = 0;
             int exenodeID1 = 0, exenodeID2 = 0, exenodeID3 = 0;
             {
