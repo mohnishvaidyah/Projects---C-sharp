@@ -53,199 +53,236 @@ namespace mvISC590AsgWebForms
             ddlExecute3.Items.Add(new ListItem("Destroy removable media", "73"));
         }
 
-
         protected void btnCompute_Click(object sender, EventArgs e)
-        {   
-            int prenodeID1 = 0, prenodeID2 = 0, prenodeID3 = 0;
-            int exenodeID1 = 0, exenodeID2 = 0, exenodeID3 = 0;
-            {
-                if (ddlPrenode1.SelectedValue == "11")
-                {
-                    prenodeID1 = 11;
+        {
+            int prenodeID1 = Convert.ToInt32(ddlPrenode1.SelectedValue);
+            int prenodeID2 = Convert.ToInt32(ddlPrenode2.SelectedValue); 
+            int prenodeID3 = Convert.ToInt32(ddlPrenode3.SelectedValue);
+            int exenodeID1 = Convert.ToInt32(ddlExecute1.SelectedValue);
+            int exenodeID2 = Convert.ToInt32(ddlExecute2.SelectedValue);
+            int exenodeID3 = Convert.ToInt32(ddlExecute3.SelectedValue);
+            //{
+            //    if (ddlPrenode1.SelectedValue == "11")
+            //    {
+            //        prenodeID1 = 11;
 
-                    if (ddlPrenode2.SelectedValue == "12")
-                    {
-                        if (ddlPrenode3.SelectedValue == "0")
-                        {
-                            prenodeID2 = 12;
-                            prenodeID3 = 0;
-                        }
-                        else
-                        {
-                            prenodeID2 = 0;
-                        }
-                    }
-                    else if (ddlPrenode2.SelectedValue == "32")
-                    {
-                        prenodeID2 = 32;
-                        if (ddlPrenode3.SelectedValue == "22")
-                        {
-                            prenodeID3 = 22;
-                        }
-                        else if (ddlPrenode3.SelectedValue == "23")
-                        {
-                            prenodeID3 = 23;
-                        }
+            //        if (ddlPrenode2.SelectedValue == "12")
+            //        {
+            //            if (ddlPrenode3.SelectedValue == "0")
+            //            {
+            //                prenodeID2 = 12;
+            //                prenodeID3 = 0;
+            //            }
+            //            else
+            //            {
+            //                prenodeID2 = 0;
+            //            }
+            //        }
+            //        else if (ddlPrenode2.SelectedValue == "32")
+            //        {
+            //            prenodeID2 = 32;
+            //            if (ddlPrenode3.SelectedValue == "22")
+            //            {
+            //                prenodeID3 = 22;
+            //            }
+            //            else if (ddlPrenode3.SelectedValue == "23")
+            //            {
+            //                prenodeID3 = 23;
+            //            }
 
-                    }
-                }
-                else if (ddlPrenode1.SelectedValue == "41")
-                {
-                    if (ddlPrenode2.SelectedValue == "0" && ddlPrenode3.SelectedValue == "0")
-                    {
-                        prenodeID1 = 41;
-                    }
-                    else
-                    {
-                        prenodeID1 = 0;
-                    }
-                }
+            //        }
+            //    }
+            //    else if (ddlPrenode1.SelectedValue == "41")
+            //    {
+            //        if (ddlPrenode2.SelectedValue == "0" && ddlPrenode3.SelectedValue == "0")
+            //        {
+            //            prenodeID1 = 41;
+            //        }
+            //        else
+            //        {
+            //            prenodeID1 = 0;
+            //        }
+            //    }
 
-            }
+            //}
 
-            if (ddlExecute1.SelectedValue == "51")
-            {
-                exenodeID1 = 51;
-                if (ddlExecute2.SelectedValue == "52")
-                {
-                    if (ddlExecute3.SelectedValue == "0")
-                    {
-                        exenodeID2 = 52;
-                    }
-                    else
-                    {
-                        exenodeID2 = 0;
-                    }
-                }
-                else if (ddlExecute2.SelectedValue == "62")
-                {
-                    exenodeID2 = 62;
-                    if (ddlExecute3.SelectedValue == "63")
-                    {
-                        exenodeID3 = 63;
-                    }
-                    else if (ddlExecute3.SelectedValue == "73")
-                    {
-                        exenodeID3 = 73;
-                    }
-                }
-                else
-                {
-                    exenodeID3 = 0;
-                }
-            }
-            else if (ddlExecute1.SelectedValue == "91")
-            {
-                exenodeID1 = 91;
-                if (ddlExecute2.SelectedValue == "92")
-                {
-                    if (ddlExecute3.SelectedValue == "0")
-                    {
-                        exenodeID2 = 92;
-                    }
-                    else
-                    {
-                        exenodeID2 = 0;
-                    }
-                }
-                else if (ddlExecute2.SelectedValue == "102")
-                {
-                    if (ddlExecute3.SelectedValue == "0")
-                    {
-                        exenodeID2 = 102;
-                    }
-                    else
-                    {
-                        exenodeID2 = 0;
-                    }
-                }
-            }
-            else if (ddlExecute1.SelectedValue == "81")
-            {
-                if (ddlExecute2.SelectedValue == "0" && ddlExecute3.SelectedValue == "0")
-                {
-                    exenodeID1 = 81;
-                }
-                else
-                {
-                    lbResult.Text = "Invalid";
-                }
-            }
+            //if (ddlExecute1.SelectedValue == "51")
+            //{
+            //    exenodeID1 = 51;
+            //    if (ddlExecute2.SelectedValue == "52")
+            //    {
+            //        if (ddlExecute3.SelectedValue == "0")
+            //        {
+            //            exenodeID2 = 52;
+            //        }
+            //        else
+            //        {
+            //            exenodeID2 = 0;
+            //        }
+            //    }
+            //    else if (ddlExecute2.SelectedValue == "62")
+            //    {
+            //        exenodeID2 = 62;
+            //        if (ddlExecute3.SelectedValue == "63")
+            //        {
+            //            exenodeID3 = 63;
+            //        }
+            //        else if (ddlExecute3.SelectedValue == "73")
+            //        {
+            //            exenodeID3 = 73;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        exenodeID3 = 0;
+            //    }
+            //}
+            //else if (ddlExecute1.SelectedValue == "91")
+            //{
+            //    exenodeID1 = 91;
+            //    if (ddlExecute2.SelectedValue == "92")
+            //    {
+            //        if (ddlExecute3.SelectedValue == "0")
+            //        {
+            //            exenodeID2 = 92;
+            //        }
+            //        else
+            //        {
+            //            exenodeID2 = 0;
+            //        }
+            //    }
+            //    else if (ddlExecute2.SelectedValue == "102")
+            //    {
+            //        if (ddlExecute3.SelectedValue == "0")
+            //        {
+            //            exenodeID2 = 102;
+            //        }
+            //        else
+            //        {
+            //            exenodeID2 = 0;
+            //        }
+            //    }
+            //}
+            //else if (ddlExecute1.SelectedValue == "81")
+            //{
+            //    if (ddlExecute2.SelectedValue == "0" && ddlExecute3.SelectedValue == "0")
+            //    {
+            //        exenodeID1 = 81;
+            //    }
+            //    else
+            //    {
+            //        lbResult.Text = "Invalid";
+            //    }
+            //}
 
             ComputeRiskScore(prenodeID1, prenodeID2, prenodeID3, exenodeID1, exenodeID2, exenodeID3);
         }
-
         protected int ComputeRiskScore(int PrenodeID1, int PrenodeID2, int PrenodeID3, int ExenodeID1, int ExenodeID2, int ExenodeID3)
         {
            int score = 0, prepare = 0, execute = 0;
-                {
-                    if (PrenodeID1 == 11)
-                    {
-                        if (PrenodeID2 == 12)
-                        {
-                            if (PrenodeID3 == 0)
-                            {
-                                prepare = 6;
-                            }
-                            else
-                            {
-                                prepare = 0;
-                            }
-                        }
-                        else if (PrenodeID2 == 32)
-                        {
 
-                            if (PrenodeID3 == 22)
-                            {
-                                prepare = 5;
-                            }
-                            else if (PrenodeID3 == 23)
-                            {
-                                prepare = 3;
-                            }
-                        }
-                    }
-                    else if (PrenodeID1 == 41)
-                    {
-                        prepare = 10;
-                    }
-                }
+           {
+               if (PrenodeID1 == 11)
+               {
+                   if (PrenodeID2 == 12)
+                   {
+                       if (PrenodeID3 == 0)
+                       {
+                           prepare = 6;
+                       }
+                       else
+                       {
+                           prepare = 0;
+                       }
+                   }
+                   else if (PrenodeID2 == 32)
+                   {
 
-                if (ExenodeID1 == 51)
-                {
+                       if (PrenodeID3 == 22)
+                       {
+                           prepare = 5;
+                       }
+                       else if (PrenodeID3 == 23)
+                       {
+                           prepare = 3;
+                       }
+                   }
+               }
+               else if (PrenodeID1 == 41)
+               {
+                   if (PrenodeID2 == 0 && PrenodeID3 == 0)
+                   {
+                       prepare = 10;
+                   }
+                   else
+                   {
+                       prepare = 0;
+                   }
+               }
+           }
 
-                    if (ExenodeID2 == 52)
-                    {
-                        execute = 7;
-                    }
-                    else if (ExenodeID2 == 62)
-                    {
-                        if (ExenodeID3 == 63)
-                        {
-                            execute = 4;
-                        }
-                        else if (ExenodeID3 == 73)
-                        {
-                            execute = 6;
-                        }
-                    }
-                }
-                else if (ExenodeID1 == 91)
-                {
-                    if (ExenodeID2 == 92)
-                    {
-                        execute = 5;
-                    }
-                    else if (ExenodeID2 == 102)
-                    {
-                        execute = 9;
-                    }
-                }
-                else if (ExenodeID1 == 81)
-                {
-                    execute = 2;
-                }
-
+        //Execute Type logic
+           if (ExenodeID1 == 51)
+           {
+               if (ExenodeID2 == 52)
+               {
+                   if (ExenodeID3 == 0)
+                   {
+                       execute = 7;
+                   }
+                   else
+                   {
+                       execute = 0;
+                   }
+               }
+               else if (ExenodeID2 == 62)
+               {
+                   if (ExenodeID3 == 63)
+                   {
+                       execute = 4;
+                   }
+                   else if (ExenodeID3 == 73)
+                   {
+                       execute = 6;
+                   }
+               }
+           }
+           else if (ExenodeID1 == 91)
+           {
+               if (ExenodeID2 == 92)
+               {
+                   if (ExenodeID3 == 0)
+                   {
+                       execute = 5;
+                   }
+                   else
+                   {
+                       execute = 0;
+                   }
+               }
+               else if (ExenodeID2 == 102)
+               {
+                   if (ExenodeID3 == 0)
+                   {
+                       execute = 9;
+                   }
+                   else
+                   {
+                       execute = 0;
+                   }
+               }
+           }
+           else if (ExenodeID1 == 81)
+           {
+               if (ExenodeID2 == 0 && ExenodeID3 == 0)
+               {
+                   execute = 2;
+               }
+               else
+               {
+                   execute = 0;
+               }
+           }
                 score = prepare * execute;
                 if (score == 0)
                 {
