@@ -61,127 +61,15 @@ namespace mvISC590AsgWebForms
             int exenodeID1 = Convert.ToInt32(ddlExecute1.SelectedValue);
             int exenodeID2 = Convert.ToInt32(ddlExecute2.SelectedValue);
             int exenodeID3 = Convert.ToInt32(ddlExecute3.SelectedValue);
-            //{
-            //    if (ddlPrenode1.SelectedValue == "11")
-            //    {
-            //        prenodeID1 = 11;
-
-            //        if (ddlPrenode2.SelectedValue == "12")
-            //        {
-            //            if (ddlPrenode3.SelectedValue == "0")
-            //            {
-            //                prenodeID2 = 12;
-            //                prenodeID3 = 0;
-            //            }
-            //            else
-            //            {
-            //                prenodeID2 = 0;
-            //            }
-            //        }
-            //        else if (ddlPrenode2.SelectedValue == "32")
-            //        {
-            //            prenodeID2 = 32;
-            //            if (ddlPrenode3.SelectedValue == "22")
-            //            {
-            //                prenodeID3 = 22;
-            //            }
-            //            else if (ddlPrenode3.SelectedValue == "23")
-            //            {
-            //                prenodeID3 = 23;
-            //            }
-
-            //        }
-            //    }
-            //    else if (ddlPrenode1.SelectedValue == "41")
-            //    {
-            //        if (ddlPrenode2.SelectedValue == "0" && ddlPrenode3.SelectedValue == "0")
-            //        {
-            //            prenodeID1 = 41;
-            //        }
-            //        else
-            //        {
-            //            prenodeID1 = 0;
-            //        }
-            //    }
-
-            //}
-
-            //if (ddlExecute1.SelectedValue == "51")
-            //{
-            //    exenodeID1 = 51;
-            //    if (ddlExecute2.SelectedValue == "52")
-            //    {
-            //        if (ddlExecute3.SelectedValue == "0")
-            //        {
-            //            exenodeID2 = 52;
-            //        }
-            //        else
-            //        {
-            //            exenodeID2 = 0;
-            //        }
-            //    }
-            //    else if (ddlExecute2.SelectedValue == "62")
-            //    {
-            //        exenodeID2 = 62;
-            //        if (ddlExecute3.SelectedValue == "63")
-            //        {
-            //            exenodeID3 = 63;
-            //        }
-            //        else if (ddlExecute3.SelectedValue == "73")
-            //        {
-            //            exenodeID3 = 73;
-            //        }
-            //    }
-            //    else
-            //    {
-            //        exenodeID3 = 0;
-            //    }
-            //}
-            //else if (ddlExecute1.SelectedValue == "91")
-            //{
-            //    exenodeID1 = 91;
-            //    if (ddlExecute2.SelectedValue == "92")
-            //    {
-            //        if (ddlExecute3.SelectedValue == "0")
-            //        {
-            //            exenodeID2 = 92;
-            //        }
-            //        else
-            //        {
-            //            exenodeID2 = 0;
-            //        }
-            //    }
-            //    else if (ddlExecute2.SelectedValue == "102")
-            //    {
-            //        if (ddlExecute3.SelectedValue == "0")
-            //        {
-            //            exenodeID2 = 102;
-            //        }
-            //        else
-            //        {
-            //            exenodeID2 = 0;
-            //        }
-            //    }
-            //}
-            //else if (ddlExecute1.SelectedValue == "81")
-            //{
-            //    if (ddlExecute2.SelectedValue == "0" && ddlExecute3.SelectedValue == "0")
-            //    {
-            //        exenodeID1 = 81;
-            //    }
-            //    else
-            //    {
-            //        lbResult.Text = "Invalid";
-            //    }
-            //}
-
             ComputeRiskScore(prenodeID1, prenodeID2, prenodeID3, exenodeID1, exenodeID2, exenodeID3);
         }
+
         protected int ComputeRiskScore(int PrenodeID1, int PrenodeID2, int PrenodeID3, int ExenodeID1, int ExenodeID2, int ExenodeID3)
         {
            int score = 0, prepare = 0, execute = 0;
 
-           {
+           {  
+               // Prepare type error
                if (PrenodeID1 == 11)
                {
                    if (PrenodeID2 == 12)
