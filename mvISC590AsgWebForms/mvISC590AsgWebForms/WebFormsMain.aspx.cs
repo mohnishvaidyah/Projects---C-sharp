@@ -14,14 +14,19 @@ namespace mvISC590AsgWebForms
 
         }
 
-        protected void LinkButton1_Click(object sender, EventArgs e)
+        protected void lbComputeCost_Click(object sender, EventArgs e)
         {
             Response.Redirect("ComputeCost.aspx");
         }
 
-        protected void lbtn2_Click(object sender, EventArgs e)
+        protected void lbComputeRisk_Click(object sender, EventArgs e)
         {
             Response.Redirect("RiskAssessment.aspx");
+        }
+
+        protected void lbCheckResult_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CheckResult.aspx");
         }
     }
 }

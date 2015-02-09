@@ -10,11 +10,15 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Compute Cost</asp:LinkButton>
+        <asp:LinkButton ID="lbComputeCost" runat="server" OnClick="lbComputeCost_Click">Compute Cost</asp:LinkButton>
     
         <br />
         <br />
-        <asp:LinkButton ID="lbtn2" runat="server" OnClick="lbtn2_Click">Compute Risk Score</asp:LinkButton>
+        <asp:LinkButton ID="lbComputeRisk" runat="server" OnClick="lbComputeRisk_Click">Compute Risk Score</asp:LinkButton>
+    
+        <br />
+        <br />
+        <asp:LinkButton ID="lbCheckResult" runat="server" OnClick="lbCheckResult_Click">Check Result</asp:LinkButton>
     
     </div>
     </form>

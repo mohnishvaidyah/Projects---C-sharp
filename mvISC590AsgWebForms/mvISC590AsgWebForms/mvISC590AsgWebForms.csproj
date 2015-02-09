@@ -57,12 +57,20 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CheckResult.aspx" />
     <Content Include="ComputeCost.aspx" />
     <Content Include="RiskAssessment.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebFormsMain.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckResult.aspx.cs">
+      <DependentUpon>CheckResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckResult.aspx.designer.cs">
+      <DependentUpon>CheckResult.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ComputeCost.aspx.cs">
       <DependentUpon>ComputeCost.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

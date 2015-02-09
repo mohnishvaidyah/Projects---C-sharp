@@ -68,7 +68,7 @@ namespace mvISC590AsgWebForms
         {
            int score = 0, prepare = 0, execute = 0;
 
-           {  
+            {  
                // Prepare type error
                if (PrenodeID1 == 11)
                {
