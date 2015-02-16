@@ -17,9 +17,9 @@
         <asp:Button ID="btnCheckResult" runat="server" OnClick="btnCheckResult_Click" style="z-index: 1; left: 57px; top: 159px; position: absolute" Text="Check Result" />
         <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 59px; top: 205px; position: absolute" Text="Key ResultSet"></asp:Label>
         <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 359px; top: 206px; position: absolute" Text="Match ResultSet"></asp:Label>
-        <asp:GridView ID="gvKeyResultset" runat="server" AutoGenerateColumns="False" style="z-index: 1; left: 58px; top: 246px; position: absolute; height: 155px; width: 228px">
+        <asp:GridView ID="gvKeyResultset" runat="server" style="z-index: 1; left: 58px; top: 246px; position: absolute; height: 155px; width: 228px">
         </asp:GridView>
-        <asp:GridView ID="gvMatchResultset" runat="server" AutoGenerateColumns="False" style="z-index: 1; left: 359px; top: 247px; position: absolute; height: 154px; width: 226px">
+        <asp:GridView ID="gvMatchResultset" runat="server" style="z-index: 1; left: 359px; top: 247px; position: absolute; height: 154px; width: 226px">
         </asp:GridView>
         <asp:Label ID="lblMatch" runat="server" style="z-index: 1; left: 367px; top: 55px; position: absolute" Text="Match:"></asp:Label>
         <asp:Label ID="lblRowCnt" runat="server" style="z-index: 1; left: 365px; top: 86px; position: absolute" Text="Row Cnt:"></asp:Label>
