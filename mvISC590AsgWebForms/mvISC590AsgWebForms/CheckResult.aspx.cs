@@ -69,18 +69,54 @@ namespace mvISC590AsgWebForms
             List<string[]> matchEntityList = objEntity.GetEntity(txtEntityName.Text);
             DataTable dtmatchEntity = ConvertEntityListToDataTable(matchEntityList);
 
-
-
-
+            if (dtKeyEntity.Columns.Count == dtmatchEntity.Columns.Count)
+            {
+                if (dtKeyEntity.Rows.Count == dtmatchEntity.Rows.Count)
+                {
+                    string keyElement = "";
+                    string matchElement = "";
+                    for (int i = 0; i < keyEntityList.Count(); i++)
+                    {
+                        string[] entityList = keyEntityList[i];
+                        for (int j = 0; j < entityList.Length; j++)
+                        {
+                            keyElement = entityList + entityList[j];
+                        }
+                    }
+                    for (int k = 0; k < matchEntityList.Count(); k++)
+                    {
+                        string[] matchentityList = matchEntityList[k];
+                        for (int l = 0; l < matchentityList.Length; l++)
+                        {
+                            matchElement = matchentityList + matchentityList[l];
+                        }
+                    }
+                    if (keyElement == matchElement)
+                    {
+                        ResultSetsMatch = true;
+                    }
+                }
+            }
             return ResultSetsMatch;
         }
+
         protected void PopulateMatchResultSet()
         {
             Entity objEntity = new Entity();
             List<string[]> ResultSet = new List<string[]>();
             string entityname = txtEntityName.Text;
-            //int row = Convert.ToInt16(txtRowCnt.Text);
-            ResultSet = objEntity.GetEntity(entityname);
+            int maxrowcnt;
+            
+            if (txtRowCnt.Text == "")
+            {
+              ResultSet = objEntity.GetEntity(entityname);
+            }
+            else
+            {
+              maxrowcnt = Convert.ToInt16(txtRowCnt.Text);
+              ResultSet = objEntity.GetEntity(entityname, maxrowcnt);
+            } 
+            
             lblRowCnt.Text = "RowCnt: " + objEntity.RowCnt.ToString();
             lblColCnt.Text = "ColCnt: " + objEntity.ColCnt.ToString();
 

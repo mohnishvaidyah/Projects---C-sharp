@@ -128,9 +128,7 @@ namespace mvISC590AsgWebForms
         {
             List<string[]> EntityList = new List<string[]>();
 
-            //if (EntityList.Count > MaxRowCnt)
-
-
+            
             if (EntityName == "ResultSet0")
             {
                 EntityList.Add(new string[] { "StudentID", "LastName", "FirstName" });
@@ -201,16 +199,20 @@ namespace mvISC590AsgWebForms
                 EntityList.Add(new string[] { "Invalid entity name" });
             }
 
-            pRowCnt = Convert.ToSByte(EntityList.Count);
-            pColCnt = Convert.ToSByte(EntityList[0].Length);
-            if (pRowCnt > MaxRowCnt)
+            pRowCnt = Convert.ToInt16(EntityList.Count);
+            pColCnt = Convert.ToInt16(EntityList[0].Length);
+            
+            if (MaxRowCnt < pRowCnt)
             {
+                EntityList.Clear();
+                EntityList.Add(new string[] { "Message" });
+                EntityList.Add(new string[] { "Entity row count exceeds maximum" });
+                pRowCnt = Convert.ToSByte(EntityList.Count);
+                pColCnt = Convert.ToSByte(EntityList[0].Length);
                 return EntityList;
             }
             else
             {
-                EntityList.Add(new string[] { "Message" });
-                EntityList.Add(new string[] { "Exceed row count" });
                 return EntityList;
             }
         }
