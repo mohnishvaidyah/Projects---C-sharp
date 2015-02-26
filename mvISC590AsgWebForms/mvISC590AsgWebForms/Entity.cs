@@ -46,7 +46,6 @@ namespace mvISC590AsgWebForms
         #endregion
 
         #region "Entity Methods"
-
         public List<string[]> GetEntity(string EntityName)
         {
             List<string[]> EntityList = new List<string[]>();
@@ -123,12 +122,10 @@ namespace mvISC590AsgWebForms
             pColCnt = Convert.ToSByte(EntityList[0].Length);
             return EntityList;
         }
-
         public List<string[]> GetEntity(string EntityName, int MaxRowCnt)
         {
             List<string[]> EntityList = new List<string[]>();
-
-            
+           
             if (EntityName == "ResultSet0")
             {
                 EntityList.Add(new string[] { "StudentID", "LastName", "FirstName" });

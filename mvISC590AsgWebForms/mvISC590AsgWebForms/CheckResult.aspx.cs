@@ -47,7 +47,7 @@ namespace mvISC590AsgWebForms
                 {
                     if (element[j] == "")
                     {
-                        objRow[j] = "null";
+                        objRow[j] = "NULL";
                     }
                     else
                     {
@@ -75,7 +75,7 @@ namespace mvISC590AsgWebForms
                 {
                     string keyElement = "";
                     string matchElement = "";
-                    for (int i = 0; i < keyEntityList.Count(); i++)
+                    for (int i = 0; i < keyEntityList.Count; i++)
                     {
                         string[] entityList = keyEntityList[i];
                         for (int j = 0; j < entityList.Length; j++)
@@ -83,7 +83,7 @@ namespace mvISC590AsgWebForms
                             keyElement = entityList + entityList[j];
                         }
                     }
-                    for (int k = 0; k < matchEntityList.Count(); k++)
+                    for (int k = 0; k < matchEntityList.Count; k++)
                     {
                         string[] matchentityList = matchEntityList[k];
                         for (int l = 0; l < matchentityList.Length; l++)
@@ -99,7 +99,6 @@ namespace mvISC590AsgWebForms
             }
             return ResultSetsMatch;
         }
-
         protected void PopulateMatchResultSet()
         {
             Entity objEntity = new Entity();
